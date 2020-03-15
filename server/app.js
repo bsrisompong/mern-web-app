@@ -7,14 +7,12 @@ import { userController } from './controller';
 // Init an Express App.
 const app = express();
 
-// Use your dependecies here
-app.use(bodyParser.urlencoded({ extended: fasle }));
+// Use your dependencies here
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // use all controllers(APIs) here
-app.get('/', (req, res) => {
-  app.use('/', userController);
-});
+app.use('/', userController);
 
 // Start Server here
 app.listen(8080, () => {
