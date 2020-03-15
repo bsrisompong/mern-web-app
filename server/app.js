@@ -1,10 +1,12 @@
 // Import all dependencies & middleware here
 import express from 'express';
-
+import bodyParser from 'body-parser';
 // Init an Express App.
 const app = express();
 
 // Use your dependecies here
+app.use(bodyParser.urlencoded({ extended: fasle }));
+app.use(bodyParser.json());
 
 // use all controllers(APIs) here
 app.get('/', (req, res) => {
